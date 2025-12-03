@@ -204,7 +204,18 @@
     </section>
 
       <!-- Imagen de verificación de usuario -->
-    <img src="img/verificacion.png" alt="Verificación de usuario con CAPTCHA" class="imagen">
+    <!--<img src="img/verificacion.png" alt="Verificación de usuario con CAPTCHA" class="imagen">-->
+    <center>
+
+      <form action="backend.php" method="POST">
+        <div class="g-recaptcha" data-sitekey="TU_SITE_KEY"></div>
+        <br>
+        <button type="submit">Enviar</button>
+      </form>
+      
+      <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+      
+    </center>
 
 
 
