@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ciberacoso y Ciberbullying</title>
+  <style>
+    :root {
+      --rosa-logo: #f8bdd9;
+      --azul-oscuro: #24557A;
+      --azul-medio: #638198;
+      --rojo-profundo: #A2351F;
+      --blanco: #ffffff;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--azul-oscuro);
+      color: var(--azul-oscuro);
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: var(--azul-oscuro);
+      padding: 1rem;
+      text-align: center;
+      color: var(--blanco);
+    }
+
+    nav a {
+      margin: 0 1rem;
+      color: var(--blanco);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .logo {
+      width: 100px;
+      margin-bottom: 1rem;
+      filter: drop-shadow(0 0 5px var(--rosa-logo));
+    }
+
+    main {
+      padding: 2rem;
+    }
+
+    section {
+      background-color: var(--azul-medio);
+      margin-bottom: 2rem;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      color: var(--blanco);
+    }
+
+    h2 {
+      color: var(--blanco);
+    }
+
+    form input, form button, textarea {
+      display: block;
+      margin: 0.5rem 0;
+      padding: 0.5rem;
+      width: 100%;
+      border-radius: 5px;
+      border: 1px solid var(--azul-oscuro);
+    }
+
+    form button, .btn {
+      background-color: var(--rojo-profundo);
+      color: var(--blanco);
+      cursor: pointer;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      margin-top: 1rem;
+      transition: background-color 0.3s ease;
+    }
+
+    form button:hover, .btn:hover {
+      background-color: #7a1f12;
+    }
+
+    label {
+      display: block;
+      margin-top: 1rem;
+    }
+
+    footer {
+      background-color: var(--azul-oscuro);
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: var(--blanco);
+    }
+
+    .imagen {
+      width: 100%;
+      max-width: 500px;
+      margin: 1rem auto;
+      display: block;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .acciones {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+
+    .acciones .btn {
+      flex: 1;
+      text-align: center;
+    }
+
+    .feedback {
+      margin-top: 1rem;
+      font-weight: bold;
+      color: #ffe;
+    }
+    .imagen-pequena {
+  width: 250px;
+  max-width: 100%;
+  display: block;
+  margin: 1rem auto;
+  border-radius: 10px;
+}
+    
+  </style>
+</head>
+<body>
+
+  <header>
+    <!-- Logo institucional -->
+    <img src="img/logo.jpg"alt="Logo Ciberacoso y Ciberbullying" class="logo">
+    <h1>Ciberacoso y Ciberbullying</h1>
+    <nav>
+      <a href="#registro">Registro</a>
+      <a href="#login">Acceso</a>
+      <a href="#perfil">Perfil</a>
+      <a href="#zona">Zona Interactiva</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Imagen de concientización emocional -->
+    <img src="img/Ilustración educativa.png" alt="Concientización sobre ciberacoso" class="imagen">
+
+    <!-- Imagen de apoyo emocional entre personas -->
+    <img src="img/Ilustración educativ.png" alt="Apoyo entre personas afectadas por ciberbullying" class="imagen">
+
+    <!-- Botones de acción -->
+    <div class="acciones">
+      <button class="btn" onclick="mostrarMensaje('Denuncia enviada')">Denunciar</button>
+      <button class="btn" onclick="mostrarMensaje('Solicitud de ayuda registrada')">Solicitar ayuda</button>
+      <button class="btn" onclick="mostrarMensaje('Redirigiendo a recursos...')">Leer más</button>
+    </div>
+    <div id="mensajeAccion" class="feedback"></div>
+
+    <!-- Registro -->
+    <section id="registro">
+      <h2>Registro</h2>
+      <form id="formRegistro">
+        <input type="text" id="usuarioRegistro" placeholder="Usuario" required>
+        <input type="password" id="contraseñaRegistro" placeholder="Contraseña" required>
+        <label><input type="checkbox" required> Acepto los Términos y Condiciones</label>
+        <button type="submit">Registrar</button>
+      </form>
+      <div id="registroFeedback" class="feedback"></div>
+    </section>
+
+    <!-- Login -->
+    <section id="login">
+      <h2>Acceso</h2>
+      <form id="formLogin">
+        <input type="text" id="usuarioLogin" placeholder="Usuario" required>
+        <input type="password" id="contraseñaLogin" placeholder="Contraseña" required>
+        <button type="submit">Acceder</button>
+        <a href="#">¿Olvidaste tu contraseña?</a>
+      </form>
+      <div id="loginFeedback" class="feedback"></div>
+    </section>
+
+    <!-- Perfil -->
+    <section id="perfil">
+      <h2>Perfil del Usuario</h2>
+      <p>Usuario: @username</p>
+      <p>Teléfono: 123456789</p>
+      <p>Email: usuario@mail.com</p>
+      <p>Dirección: Calle 1 #01-01</p>
+    </section>
+
+    <!-- Zona Interactiva -->
+    <section id="zona">
+      <h2>Zona Interactiva</h2>
+      <p>Comparte tu experiencia o realiza una pregunta:</p>
+      <textarea id="comentario" placeholder="Escribe aquí..."></textarea>
+      <button onclick="enviarComentario()">Enviar</button>
+      <div id="comentarioFeedback" class="feedback"></div>
+    </section>
+
+      <!-- Imagen de verificación de usuario -->
+    <img src="img/verificacion.png" alt="Verificación de usuario con CAPTCHA" class="imagen">
+
+
+
+  </main>
+
+  <footer>
+    &copy; 2025 Plataforma de Concientización Digital
+  </footer>
+
+  <script>
+    function mostrarMensaje(texto) {
+      const mensaje = document.getElementById("mensajeAccion");
+      mensaje.textContent = texto;
+      setTimeout(() => mensaje.textContent = "", 3000);
+    }
+
+    document.getElementById("formRegistro").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const usuario = document.getElementById("usuarioRegistro").value;
+      document.getElementById("registroFeedback").textContent = "Registro exitoso para: " + usuario;
+      setTimeout(() => document.getElementById("registroFeedback").textContent = "", 3000);
+    });
+
+    document.getElementById("formLogin").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const usuario = document.getElementById("usuarioLogin").value;
+      document.getElementById("loginFeedback").textContent = "Bienvenido, " + usuario;
+      setTimeout(() => document.getElementById("loginFeedback").textContent = "", 3000);
+    });
+
+    function enviarComentario() {
+      const texto = document.getElementById("comentario").value;
+      if (texto.trim() === "") {
+        document.getElementById("comentarioFeedback").textContent = "Por favor escribe algo antes de enviar.";
+      } else {
+        document.getElementById("comentarioFeedback").textContent = "Gracias por compartir tu experiencia.";
+        document.getElementById("comentario").value = "";
+      }
+      setTimeout(() => document.getElementById("comentarioFeedback").textContent = "", 4000);
+    }
+  </script>
+
+</body>
+</html>
